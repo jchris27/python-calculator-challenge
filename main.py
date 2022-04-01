@@ -24,7 +24,7 @@ operations = {
 }
 
 num1 = int(input("What's the first number?: "))
-num2 = int(input("What's the second number?: "))
+
 
 for symbol in operations:
   operation = ""
@@ -32,17 +32,23 @@ for symbol in operations:
   print(operation)
 operation_symbol = input("Pick an operation from the line above: ")
 
-answer = 0
+num2 = int(input("What's the second number?: "))
+# If operation method
+# answer = 0
 
-if operation_symbol == "+":
-  answer = add(num1, num2)
-elif operation_symbol == "-":
-  answer = subtract(num1, num2)
-elif operation_symbol == "*":
-  answer = multiply(num1, num2)
-elif operation_symbol == "/":
-  answer = divide(num1, num2)
-else:
-  print("Invalid operation symbol. Try again")
+# if operation_symbol == "+":
+#   answer = add(num1, num2)
+# elif operation_symbol == "-":
+#   answer = subtract(num1, num2)
+# elif operation_symbol == "*":
+#   answer = multiply(num1, num2)
+# elif operation_symbol == "/":
+#   answer = divide(num1, num2)
+# else:
+#   print("Invalid operation symbol. Try again")
+
+# using a function method
+functional_operator = operations[operation_symbol]
+answer = functional_operator(num1, num2)
 
 print(f"{num1} {operation_symbol} {num2} = {answer}")
