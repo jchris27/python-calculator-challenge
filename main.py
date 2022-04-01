@@ -1,4 +1,5 @@
 # Calculator challenge
+from art import logo
 
 # Add
 def add(n1, n2):
@@ -24,20 +25,20 @@ operations = {
 }
 
 def calculator():
+  print(logo)
+  num1 = float(input("What's the first number?: "))
+    
+  for symbol in operations:
+    operation = ""
+    operation += symbol
+    print(operation)
+    
   # While loops, Flags, and Recursion
   should_continue = True
   
   while should_continue:
-    
-    num1 = int(input("What's the first number?: "))
-    
-    for symbol in operations:
-      operation = ""
-      operation += symbol
-      print(operation)
-    operation_symbol = input("Pick an operation from the line above: ")
-    
-    num2 = int(input("What's the second number?: "))
+   operation_symbol = input("Pick an operation: ") 
+   num2 = float(input("What's the next number?: "))
   
     # ===============================================
     # If operation method
@@ -56,14 +57,14 @@ def calculator():
     # ================================================
     
     # using a function method
-    functional_operator = operations[operation_symbol]
-    answer = functional_operator(num1, num2)
+   functional_operator = operations[operation_symbol]
+   answer = functional_operator(num1, num2)
     
-    print(f"{num1} {operation_symbol} {num2} = {answer}")
+   print(f"{num1} {operation_symbol} {num2} = {answer}")
   
-    if input("Type 'y' to continue calculating with {answer}, or 'n' to start a new calculation: ") == "y":
+   if input(f"Type 'y' to continue calculating with {answer}, or 'n' to start a new calculation: ") == "y":
       num1 = answer
-    else:
+   else:
       should_continue = False
       calculator()
 
